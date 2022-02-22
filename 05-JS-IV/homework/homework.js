@@ -7,13 +7,12 @@ function crearGato(nombre, edad) {
   // Devuelve el objeto
   // Tu código:
 
- var obj = {
-   'nombre':nombre
- }
-obj.edad=edad;
-obj['meow'] = function(){return 'Meow!'}
-
-return obj
+  var gato = {
+    nombre:nombre,
+    edad:edad,
+    meow:function(){ return 'Meow!'}
+  }
+return gato;
 }
 
 
@@ -24,10 +23,8 @@ function agregarPropiedad(objeto, property) {
   // Tu código:
 
   objeto[property] = null;
-  
+
   return objeto;
-
-
 }
 
 function invocarMetodo(objeto, metodo) {
@@ -36,18 +33,14 @@ function invocarMetodo(objeto, metodo) {
   // Nada necesita ser devuelto ("returned")
   // Tu código:
 
- var nombre = metodo
- objeto[nombre]();
-  
+  objeto[metodo]();
 }
 
 function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-var producto;
-producto= objetoMisterioso['numeroMisterioso'] * 5
-return producto;
+  return objetoMisterioso.numeroMisterioso * 5
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
@@ -56,22 +49,22 @@ function eliminarPropiedad(objeto, unaPropiedad) {
   // Devuelve el objeto
   // Tu código:
 
-  delete objeto[unaPropiedad]
-  return objeto
-}
+  delete objeto[unaPropiedad];
+  return objeto;
+  }
 
 function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
 
-  objeto ={
-    'nombre':nombre,
-    'email':email,
-    'password':password
+  objeto2 = {
+    nombre:nombre,
+    email:email,
+    password:password
   }
-return objeto
 
+  return objeto2;
 }
 
 function tieneEmail(usuario) {
@@ -79,9 +72,8 @@ function tieneEmail(usuario) {
   // De lo contratio, devuelve "false"
   // Tu código:
   
-  if (usuario.email) return true
-  else return false
-
+ if(usuario.email) return true
+ else return false
 }
 
 
@@ -92,10 +84,8 @@ function tienePropiedad(objeto, propiedad) {
   // De lo contrario, devuelve "false"
   // Tu código:
 
-  if(objeto[propiedad]) return true
-  else return false
-
-
+  if (objeto[propiedad]) return true
+  else return false;
 }
 
 function verificarPassword(usuario, password) {
@@ -104,19 +94,16 @@ function verificarPassword(usuario, password) {
   // De lo contrario, devuelve "false"
   // // Tu código:
 
-  if (usuario['password'] === password) return true
-  else return false
-
+  if (usuario.password === password) return true
+  else return false;
 }
 
 function actualizarPassword(usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
   // Devuelve el objeto
   // Tu código:
-
-  usuario.password= nuevaPassword;
+  usuario.password=nuevaPassword;
   return usuario;
-
 }
 
 function agregarAmigo(usuario, nuevoAmigo) {
@@ -125,9 +112,8 @@ function agregarAmigo(usuario, nuevoAmigo) {
   // Devuelve el objeto "usuario"
   // // Tu código:
 
-usuario.amigos.push(nuevoAmigo);
-return usuario;
-
+  usuario.amigos.push(nuevoAmigo);
+  return usuario;
 }
 
 function pasarUsuarioAPremium(usuarios) {
@@ -137,12 +123,11 @@ function pasarUsuarioAPremium(usuarios) {
   // Devuelve el array de usuarios
   // Tu código:
 
-  for (i=0;i<usuarios.length;i++)
+  for(i=0;i<usuarios.length;i++)
   {
-    usuarios[i]['esPremium']=true;
+    usuarios[i].esPremium =true
   }
 return usuarios;
-
 }
 
 function sumarLikesDeUsuario(usuario) {
@@ -152,13 +137,12 @@ function sumarLikesDeUsuario(usuario) {
   // Suma todos los likes de todos los objetos "post"
   // Devuelve la suma
   // Tu código:
- var suma=0;
-
- for (i=0;i<usuario.posts.length;i++)
-  {
-    suma = suma + usuario.posts[i]['likes'];
-  }
-return suma;
+var contador=0;
+for(i=0;i<usuario.posts.length;i++)
+{
+contador = contador + usuario.posts[i].likes;
+}
+return contador;
 }
 
 function agregarMetodoCalculoDescuento(producto) {
@@ -171,12 +155,13 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.porcentajeDeDescuento -> 0.2 (o simplemente ".2")
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
-var calc;
 
-  producto['calcularPrecioDescuento'] = function(){
+  producto.calcularPrecioDescuento = function()
+  {
     return producto.precio - (producto.precio * producto.porcentajeDeDescuento)
   }
-    return producto;
+return producto;
+
 }
 
 // No modificar nada debajo de esta línea
